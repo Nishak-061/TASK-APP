@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GoPeople } from "react-icons/go";
 import Cards from "../Cards/Cards";
 import "./Dashboard.css";
+import axios from "axios";
 
 const Dashboard = () => {
   const [username, setUsername] = useState("");
@@ -28,11 +29,14 @@ const Dashboard = () => {
     fetchTasks(storedUserId);
   }, []);
 
-  const fetchTasks = async () => {
+ const fetchTasks = async () => {
     const userId = localStorage.getItem("userId"); // Get the logged-in user's ID
-    const response = await fetch(`https://task-application-03me.onrender.com/api/tasks?assignedTo=${userId}`); // Fetch tasks assigned to the user
-    const data = await response.json();
-    setTasks(data);
+    try {
+      const response = await axios.get(`https://task-application-03me.onrender.com/api/tasks?assignedTo=${userId}`);
+      setTasks(response.data);
+    } catch (error) {
+      console.error("Error fetching tasks:", error);
+    }
   };
 
   const getCurrentDate = () => {
@@ -67,27 +71,25 @@ const Dashboard = () => {
     setEmail("");
   };
 
+  
   const handleAddEmail = async () => {
     try {
-      const response = await fetch("https://task-application-03me.onrender.com/api/tasks/share", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, creatorId }),
+      const response = await axios.post("https://task-application-03me.onrender.com/api/tasks/share", {
+        email,
+        creatorId
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         console.log("Task board shared successfully");
         setShowPopup(false);
       } else {
-        const errorData = await response.json();
-        console.error("Failed to share task board:", errorData.message);
+        console.error("Failed to share task board:", response.data.message);
       }
     } catch (error) {
       console.error("Error sharing task board:", error);
     }
   };
+
 
   const handleFilterChange = (event) => {
     setSelectedFilter(event.target.value);
@@ -123,14 +125,11 @@ const Dashboard = () => {
 
   const handleAssignTask = async (taskId, assignedUserEmail) => {
     try {
-      const response = await fetch(`https://task-application-03me.onrender.com/api/tasks/${taskId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ assignedTo: assignedUserEmail }),
+      const response = await axios.put(`https://task-application-03me.onrender.com/api/tasks/${taskId}`, {
+        assignedTo: assignedUserEmail
       });
-      if (response.ok) {
+
+      if (response.status === 200) {
         console.log("Task assigned successfully");
         fetchTasks(); // Refresh tasks after assignment
       } else {
