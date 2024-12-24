@@ -11,7 +11,7 @@ const PublicTaskView = () => {
     useEffect(() => {
       const fetchTask = async () => {
         try {
-          const response = await axios.get(`https://task-app-4-q1f0.onrender.com/api/tasks/${id}/public`);
+          const response = await axios.get(`https://task-application-03me.onrender.com/api/tasks/${id}/public`);
           setTask(response.data);
         } catch (error) {
           console.error('Error fetching task:', error);
