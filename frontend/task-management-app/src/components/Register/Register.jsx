@@ -25,7 +25,7 @@ const Register = () => {
   const handleRegister = async () => {
     try {
       const response = await axios.post(
-       "https://task-app-4-q1f0.onrender.com/api/auth/register",
+       "https://task-application-03me.onrender.com/api/auth/register",
         formData
       );
       alert(response.data.message);
