@@ -24,7 +24,7 @@ const Setting = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("https://task-app-1-ah5s.onrender.com/api/auth/profile", {
+        const response = await axios.get("https://task-application-03me.onrender.com/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserData({
@@ -58,7 +58,7 @@ const Setting = () => {
       const token = localStorage.getItem("token");
       const updateData = { [activeField]: userData[activeField] };
 
-      const response = await axios.put(`https://task-app-4-q1f0.onrender.com/api/auth/update`, updateData, {
+      const response = await axios.put(`https://task-application-03me.onrender.com/api/auth/update`, updateData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
