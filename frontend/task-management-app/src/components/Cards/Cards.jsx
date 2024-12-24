@@ -32,7 +32,7 @@ const Cards = ({ tasks, onAssignTask }) => {
     console.log("Fetching tasks for User ID:", userId);
     try {
       const response = await axios.get(
-        `https://task-app-4-q1f0.onrender.com/api/tasks?userId=${userId}`
+        `https://task-application-03me.onrender.com/api/tasks?userId=${userId}`
       );
       setTodoTasks(response.data);
     } catch (error) {
@@ -66,7 +66,7 @@ const Cards = ({ tasks, onAssignTask }) => {
       // Check if we are updating an existing task
       if (taskData._id) {
         const response = await axios.put(
-          `https://task-app-4-q1f0.onrender.com/api/tasks/${taskData._id}`,
+          `https://task-application-03me.onrender.com/api/tasks/${taskData._id}`,
           {
             ...taskData,
             creator: userId,
@@ -83,7 +83,7 @@ const Cards = ({ tasks, onAssignTask }) => {
         console.log("Task updated:", updatedTask);
       } else {
         // Creating a new task
-        const response = await axios.post("https://task-app-4-q1f0.onrender.com/api/tasks", {
+        const response = await axios.post("https://task-application-03me.onrender.com/api/tasks", {
           ...taskData,
           creator: userId,
           status: "to-do",
@@ -136,7 +136,7 @@ const Cards = ({ tasks, onAssignTask }) => {
 
     try {
       if (updatedTask._id) {
-        await axios.put(`https://task-app-4-q1f0.onrender.com/api/tasks/${updatedTask._id}`, {
+        await axios.put(`https://task-application-03me.onrender.com/api/tasks/${updatedTask._id}`, {
           checklist: updatedTask.checklist,
         });
       } else {
@@ -160,7 +160,7 @@ const Cards = ({ tasks, onAssignTask }) => {
 
       // Update the task's status on the backend with the token in headers
       await axios.put(
-        `https://task-app-4-q1f0.onrender.com/api/tasks/${taskId}`,
+        `https://task-application-03me.onrender.com/api/tasks/${taskId}`,
         {
           status: newStatus,
         },
@@ -197,7 +197,7 @@ const Cards = ({ tasks, onAssignTask }) => {
 
   const handleDeleteTask = async (taskId) => {
     try {
-      await axios.delete(`https://task-app-4-q1f0.onrender.com/api/tasks/${taskId}`);
+      await axios.delete(`https://task-application-03me.onrender.com/api/tasks/${taskId}`);
       setTodoTasks(todoTasks.filter((task) => task._id !== taskId));
       console.log(`Task ID: ${taskId} deleted`);
     } catch (error) {
