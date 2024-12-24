@@ -9,20 +9,22 @@ const PublicTaskView = () => {
     const [error, setError] = useState(null);
   
     useEffect(() => {
-      const fetchTask = async () => {
-        try {
-          const response = await axios.get(`https://task-application-03me.onrender.com/api/tasks/${id}/public`);
-          setTask(response.data);
-        } catch (error) {
-          console.error('Error fetching task:', error);
-          setError('Error fetching task.');
-        } finally {
-          setLoading(false);
-        }
-      };
-  
-      fetchTask();
-    }, [id]);
+  const fetchTask = async () => {
+    try {
+      console.log(`Fetching task with ID: ${id}`);
+      const response = await axios.get(`https://task-application-03me.onrender.com/api/tasks/${id}/public`);
+      setTask(response.data);
+    } catch (error) {
+      console.error('Error fetching task:', error);
+      setError('Error fetching task.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchTask();
+}, [id]);
+
   
     if (loading) {
       return <div>Loading...</div>;
