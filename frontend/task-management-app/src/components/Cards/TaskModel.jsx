@@ -28,7 +28,7 @@ const TaskModel = ({ isOpen, onClose, onSave, taskData }) => {
   const fetchUsers = async () => {
     try {
       console.log("Fetching users from the database..."); // Log before fetching
-      const response = await axios.get("https://task-app-4-q1f0.onrender.com/api/auth/users", {
+      const response = await axios.get("https://task-application-03me.onrender.com/api/auth/users", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, // Ensure you are passing the token
         },
