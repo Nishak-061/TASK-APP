@@ -29,7 +29,7 @@ const Analytics = () => {
   
       
       // Make the GET request with the creator parameter and Authorization header
-      const response = await axios.get(`https://task-app-4-q1f0.onrender.com/api/tasks?creator=${userId}`, {
+      const response = await axios.get(`https://task-application-03me.onrender.com/api/tasks?creator=${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
