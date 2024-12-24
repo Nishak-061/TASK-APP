@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.dashboard-container {
+    display: flex; 
+    height: 100vh; /* Full height of the viewport */
+}
+
+.dashboard-sidebar-container {
+    height: 100vh; /* Sidebar takes full height of the viewport */
+    position: fixed; /* Fix the sidebar to make sure it doesn't move */
+    width: 230px; /* Width to match the positioning of the horizontal line */
+    top: 0;
+    left: 0;
+    background-color: white; /* Example background to match your theme */
+    overflow: hidden; /* Prevent sidebar from scrolling */
+    border: 1px solid #EDF5FE;
+}
+
+
+.dashboard-sidebar-container-heading {
+   margin-left: 50px;
+}
+
+.dashboard-sidebar-container-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dashboard-sidebar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 45px;
+    align-items: center;
+    margin-left: 19px;
+    
+}
+
+.dashboard-sidebar-icons {
+    margin-right: 10px;
+    color: #707070;
+}
+
+.dashboard-sidebar-board-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #707070;
+    margin-right: 21px;
+    cursor: pointer;
+}
+
+
+.dashboard-sidebar-analytic-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.dashboard-sidebar-setting-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;    
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #4391ED1A; /* Active background color */
+    color: black !important;
+}
+
+.dashboard-sidebar-board-text,
+.dashboard-sidebar-analytic-text,
+.dashboard-sidebar-setting-text {
+    color: #707070; /* Default text color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+
+.dashboard-sidebar-logout {
+    margin-top: 155%;
+    margin-left: 30%;
+}
+
+
+.dashboard-sidebar-logout-btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #CF3636;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.dashboard-horizontal-line {
+    width: 1px;              /* Line thickness */
+    background-color: black;
+    border: none;             /* Remove default border */
+    position: fixed;       /* Positioning */
+    left: 230px;              /* Adjust to position where you want */
+    top: 0;                   /* Start from top */
+}
+
+.dashboard-main-content-container {
+    margin-left: 230px;
+    overflow-y: hidden; 
+    padding: 10px; 
+    white-space: nowrap; 
+    scroll-behavior: smooth;
+}
+
+.dashboard-main-content-container::-webkit-scrollbar {
+    height: 10px; 
+}
+
+.dashboard-main-content-container::-webkit-scrollbar-thumb {
+    background-color: #9CB7C5; 
+    border-radius: 10px; 
+}
+
+.dashboard-main-content-timing {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #707070;
+    position: fixed;
+    left: 90%;
+   /* float: right; */
+}
+
+.dashboard-main-content-filter {
+    position: fixed;
+    left: 91%;
+    top: 15%;
+}
+
+.date-filter-dropdown {
+    padding: 5px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.dashboard-main-content-header {
+    margin-top: 10px;
+    margin-left: 20px; 
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    position: fixed;
+}
+
+.dashboard-main-content-board-header-container {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Optionally space between Board and Add People */
+    margin-left: 20px;
+    margin-bottom: 100px;
+    position: fixed;
+    top: 12%;
+}
+
+.dashboard-main-content-board-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 29px;
+    margin-right: 20px; /* Add some space between Board and Add People */
+    
+}
+
+.dashboard-main-content-add-people {
+    display: flex;
+    align-items: center; /* Vertically align the icon and text */
+    cursor: pointer;
+    margin-right: 80%;
+}
+
+.dashboard-main-content-icon {
+    color: #707070;
+    margin-right: 5px; /* Spacing between icon and text */
+}
+
+.dashboard-main-content-icon-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #707070;
+}
+
+
+/* Dashboard.css */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is on top of other content */
+  }
+  
+  .popup {
+    width: 665px;
+    height: 284px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .popup-heading {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 60px;
+    margin-top: 30px;
+  }
+
+  .popup-input-box {
+   width: 594px;
+   height: 56px;
+   border: 1px solid #767575;
+   border-radius: 10px;
+   margin-left: 30px;
+  }
+
+  .popup-input-box::placeholder {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #00000080;
+  }
+  
+  .popup-buttons {
+    width: 610px;
+    height: 45px;
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+
+  .popup-button-cancel {
+    width: 300px;
+    height: 45px;
+    border: 1px solid #CF3636;
+    border-radius: 12px;
+    color: #CF3636;
+    background-color: white;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .popup-button-add-email {
+    width: 300px;
+    height: 45px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color: #17A2B8;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+

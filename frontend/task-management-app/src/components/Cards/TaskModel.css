@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.task-model-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is on top */
+}
+
+.task-model-pop-up {
+    width: 666px;
+    max-height: 90vh; /* Set a max height for the popup */
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 22px;
+    box-sizing: border-box; /* Include padding in width and height calculations */
+    padding-right: 15px; /* Push content inward so scrollbar appears inside */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styling */
+.task-model-pop-up::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width to fit padding */
+}
+
+.task-model-pop-up::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.task-model-pop-up::-webkit-scrollbar-thumb {
+    background-color: #9CB7C5;
+    border-radius: 10px;
+    border: 2px solid white; /* Keeps scrollbar thumb within boundary */
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); /* Optional: slight shadow for a contained effect */
+}
+
+
+.task-model-heading {
+    display: flex;
+}
+
+.task-model-asterisk {
+    color: red;
+    margin-left: 0;
+    margin-top: 37px;
+}
+
+.task-model-title {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+.task-model-input-text {
+    width: 588px;
+    height: 44px;
+    margin-left: 30px;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+}
+
+.task-model-input-text::placeholder {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #9B959F;
+    position: absolute;
+    left: 15px;
+}
+
+.task-model-priority {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+    gap: 12px;
+}
+
+.task-model-asterisk-priority {
+    color: red;
+}
+
+.task-model-priorty-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px; 
+    margin-top: 6px; 
+}
+
+.task-model-priority-button {
+    display: flex;
+    gap: 10px;
+}
+
+.task-model-high-priority {
+  width: 135px;
+  height: 31px;
+}
+
+.task-model-high-dot {
+    color: #FF2473;
+}
+
+.task-model-moderate-priority {
+    width: 175px;
+    height: 31px;
+}
+
+.task-model-moderate-dot {
+    color: #18B0FF;
+}
+
+.task-model-low-priority {
+    width: 132px;
+    height: 31px;
+}
+
+.task-model-low-dot {
+    color: #63C05B;
+}
+
+.btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #767575;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #E2E2E2;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.task-model-assign-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.task-model-assign-input {
+    width: 512px;
+    height: 44px;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .task-model-dropdown {
+    width: 512px;
+    max-height: 282px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 10;
+    margin-top: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-model-dropdown-option {
+    display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+  justify-content: space-between;
+  }
+
+  .user-initials {
+    width: 41px;
+    height: 41px;
+    background-color: #FFEBEB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    margin-right: 10px;
+  }
+  
+  .user-email {
+    flex: 0;
+    font-size: 14px;
+  }
+  
+
+  .task-model-dropdown-assign-btn {
+    width: 154px;
+    height: 31px;
+    background-color: white;
+    border: 1px solid #E2E2E2;
+    border-radius: 8px;
+    padding: 5px 10px 5px 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #767575;
+    cursor: pointer;
+  }
+
+.task-model-assign-heading {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.task-model-priority-checklist {
+    display: flex;
+}
+
+.task-model-checklist {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 25px;
+    margin-left: 30px;
+}
+
+.task-model-asterisk-checklist {
+    color: red;
+    margin-top: 20px;
+}
+
+.task-model-add-new-btn {
+    width: 58px;
+    height: 43px;
+    margin-left: 30px;
+    margin-top: 10px;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #767575;
+    cursor: pointer;
+}
+
+.task-model-below-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12%;
+    margin-bottom: 3%;
+}
+
+.task-model-due-date-btn {
+    width: 185px;
+    height: 45px;
+    color: #707070;
+    border: 1px solid #E2E2E2;
+    border-radius: 12px;
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.task-model-cancel-save-button {
+    display: flex;
+    gap: 12px;
+}
+
+.task-model-cancel-btn {
+    width: 162px;
+    height: 45px;
+    border: 1px solid #CF3636;
+    border-radius: 12px;
+    background-color: transparent;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #CF3636;
+    cursor: pointer;
+}
+
+ .task-model-save-btn {
+    width: 162px;
+    height: 45px;
+    color: white;
+    background-color: #17A2B8;
+    border: none;
+    border-radius: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+ }
+
+  .task-model-checklist-item {
+    width: 550px;
+    height: 44px;
+    border: 1px solid #E2E2E2;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 10px;
+    margin-left: 30px;
+    padding-left: 40px;
+  }
+
+  .checklist-item {
+    position: relative;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.checklist-item .task-model-trash {
+    position: absolute;
+    top: 36px;
+    right: 40px; /* Adjust to position icon correctly */
+    transform: translateY(-50%);
+    color: #CF3636;
+    cursor: pointer;
+}
+
+/* new */
+  
+  .task-model-checkbox {
+    appearance: none;
+    position: absolute;
+    top: 5px;
+    right: 90%;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #17A2B8; /* Green border */
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* Add custom styles for checked state */
+.task-model-checkbox:checked {
+    background-color: #17A2B8; /* Green background */
+  }
+
+  /* Add checkmark when checked */
+.task-model-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 0;
+    left: 2px;
+    color: white;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  
+  

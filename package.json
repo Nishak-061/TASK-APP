@@ -1,0 +1,16 @@
+{
+  "name": "task-management-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && node server.js",
+    "install-frontend": "cd frontend/task-management-app && npm install",
+    "build-frontend": "cd frontend/task-management-app && npm run build",
+    "start-frontend": "cd frontend/task-management-app && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

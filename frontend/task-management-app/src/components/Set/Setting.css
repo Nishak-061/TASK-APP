@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+
+.setting-header {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin-left: 50px
+}
+
+.setting-form-boxes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+.setting-form-input-container {
+    position: relative; /* Make the container relative to position the icon */
+  }
+  
+  .setting-input-icon {
+    position: absolute;
+    left: 15px; /* Adjust the position to align the icon inside the input */
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+    color: #707070; /* Icon color */
+    font-size: 20px; /* Icon size */
+  }
+  
+  .setting-form-input-type {
+    width: 493px;
+    height: 55px;
+    border: 1px solid #D0D0D0;
+    border-radius: 11px;
+    padding-left: 50px; /* Add padding to the left to make space for the icon */
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+  }
+
+  .setting-form-button {
+    width: 493px;
+    height: 55px;
+    color: white;
+    background-color: #17A2B8;
+    border: none;
+    border-radius: 50px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    margin-top: 50px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.Toastify__toast {
+  width: 370px !important; /* Increase width */
+  white-space: normal !important; /* Allow text to wrap to new lines */
+}
