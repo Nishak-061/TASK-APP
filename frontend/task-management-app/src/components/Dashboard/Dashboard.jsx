@@ -30,7 +30,7 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     const userId = localStorage.getItem("userId"); // Get the logged-in user's ID
-    const response = await fetch(`https://task-app-4-q1f0.onrender.com/api/tasks?assignedTo=${userId}`); // Fetch tasks assigned to the user
+    const response = await fetch(`https://task-application-03me.onrender.com/api/tasks?assignedTo=${userId}`); // Fetch tasks assigned to the user
     const data = await response.json();
     setTasks(data);
   };
@@ -69,7 +69,7 @@ const Dashboard = () => {
 
   const handleAddEmail = async () => {
     try {
-      const response = await fetch("https://task-app-4-q1f0.onrender.com/api/tasks/share", {
+      const response = await fetch("https://task-application-03me.onrender.com/api/tasks/share", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +123,7 @@ const Dashboard = () => {
 
   const handleAssignTask = async (taskId, assignedUserEmail) => {
     try {
-      const response = await fetch(`https://task-app-4-q1f0.onrender.com/api/tasks/${taskId}`, {
+      const response = await fetch(`https://task-application-03me.onrender.com/api/tasks/${taskId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
